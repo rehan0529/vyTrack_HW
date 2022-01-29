@@ -12,7 +12,6 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBase {
 
-
     WebDriver driver;
     WebDriverWait wait;
     Actions actions;
