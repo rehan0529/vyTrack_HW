@@ -17,6 +17,14 @@ public class CalendarEventsPage extends BasePage {
     @FindBy(xpath = "//*[@class='btn-group actions-group']/div")
     public WebElement options;
 
+    @FindBy(xpath = "//input[@type='number']")
+    public WebElement pageNumber;
+
+    @FindBy(xpath = "//div[@class='btn-group']/button/text()[1]")
+    public WebElement viewPerPage;
+
+
+
 
 
 }
