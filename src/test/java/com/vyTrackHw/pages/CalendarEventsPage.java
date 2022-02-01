@@ -14,13 +14,14 @@ public class CalendarEventsPage extends BasePage {
     @FindBy(css = "[title='Create Calendar event']")
     public WebElement createCalendarEvent;
 
-    @FindBy(xpath = "//*[@class='btn-group actions-group']/div")
+    @FindBy(css = "div[class='btn btn-link dropdown-toggle']")
     public WebElement options;
 
-    @FindBy(xpath = "//input[@type='number']")
+    @FindBy(xpath = "//input[@type='number']")     //By css "input[type='number']"
     public WebElement pageNumber;
 
-    @FindBy(xpath = "//div[@class='btn-group']/button/text()[1]")
+    //@FindBy(xpath = "//div[@class='btn-group']/button")
+    @FindBy(css = "button[class='btn dropdown-toggle ']")
     public WebElement viewPerPage;
 
 

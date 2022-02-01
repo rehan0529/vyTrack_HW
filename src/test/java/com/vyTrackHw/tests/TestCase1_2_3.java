@@ -4,6 +4,7 @@ import com.vyTrackHw.pages.CalendarEventsPage;
 import com.vyTrackHw.pages.DashboardPage;
 import com.vyTrackHw.pages.LoginPage;
 import com.vyTrackHw.utilities.ConfigurationReader;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -18,105 +19,42 @@ public class TestCase1_2_3 extends TestBase {
  */
 
     @Test
-    public void test1() {
+    public void verifyOptionsTest() {
+        extentLogger = report.createTest("Verify Option Link");
+        extentLogger.info("Preconditions Loaded");
+        extentLogger.info("Verify that Options Link is Displayed");
 
-    extentLogger = report.createTest("Activities, Calender Events verification");
-    LoginPage loginPage = new LoginPage();
-
-    String userName = ConfigurationReader.get("storemanager_username");
-    String passWord = ConfigurationReader.get("storemanager_password");
-
-        extentLogger.info("username: "+userName);
-        extentLogger.info("password: "+passWord);
-        extentLogger.info("Login as a Store Manager");
-
-    loginPage.login(userName,passWord);
-
-        extentLogger.info("navigate to --> Activities > Calendar Events");
-
-        DashboardPage dashboardPage = new DashboardPage();
-        dashboardPage.navigateToModule("Activities","Calendar Events");
-
-        CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
-        String actual = calendarEventsPage.options.getText();
-        String expected = "Options";
-
-        extentLogger.info("Verify that Options are available");
-        Assert.assertEquals(actual, expected);
-
-        extentLogger.pass("PASSED");
+        Assert.assertTrue(page.options.isDisplayed(), "Verify that Link is Displayed");
+        extentLogger.pass("Options is Displayed");
 
     }
+
     @Test
-    public void test2(){
+    public void verifyPageNumber() {
 
-        extentLogger = report.createTest("Activities, Calender Events verification");
-        LoginPage loginPage = new LoginPage();
+        extentLogger = report.createTest("Verify Page Number");
+        extentLogger.info("Verifying the Page Number");
 
-        String userName = ConfigurationReader.get("storemanager_username");
-        String passWord = ConfigurationReader.get("storemanager_password");
+        int pageNumber = Integer.parseInt(page.pageNumber.getAttribute("value"));
+        Assert.assertEquals(pageNumber, 1, "Page number is Equal to 1");
 
-        extentLogger.info("username: "+userName);
-        extentLogger.info("password: "+passWord);
-        extentLogger.info("Login as a Store Manager");
-
-        loginPage.login(userName,passWord);
-
-        extentLogger.info("navigate to --> Activities > Calendar Events");
-
-        DashboardPage dashboardPage = new DashboardPage();
-        dashboardPage.navigateToModule("Activities","Calendar Events");
-
-        CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
-
-
-        String actual = calendarEventsPage.pageNumber.getAttribute("value");
-        String expected = "1";
-
-        Assert.assertEquals(actual, expected);
-
+        extentLogger.pass("Verified that Page number is 1");
 
     }
+
     @Test
-    public void test3(){
+    public void viewPerPage() {
 
-        extentLogger = report.createTest("Activities, Calender Events verification");
-        LoginPage loginPage = new LoginPage();
+        extentLogger = report.createTest("Verify View Per Page Test");
+        extentLogger.info("Verifying view per page is 25");
 
-        String userName = ConfigurationReader.get("storemanager_username");
-        String passWord = ConfigurationReader.get("storemanager_password");
+        wait.until(ExpectedConditions.visibilityOf(page.viewPerPage));
+        int viewPerPage = Integer.parseInt(page.viewPerPage.getText());
+        Assert.assertEquals(viewPerPage, 25, "Verify that view per page is 25");
 
-        extentLogger.info("username: "+userName);
-        extentLogger.info("password: "+passWord);
-        extentLogger.info("Login as a Store Manager");
-
-        loginPage.login(userName,passWord);
-
-        extentLogger.info("navigate to --> Activities > Calendar Events");
-
-        DashboardPage dashboardPage = new DashboardPage();
-        dashboardPage.navigateToModule("Activities","Calendar Events");
-
-//        //WebElement dropdown = driver.findElement(By.xpath("//div[@class='btn-group']/button/span"));
-//
-//
-//        List<WebElement> dropdownOptions = driver.findElements(By.className("dropdown-item"));
-//
-//        //print size of options
-//        System.out.println("dropdownOptions.size() = " + dropdownOptions.size());
-//        Assert.assertEquals(dropdownOptions.size(),4,"Verify size of options");
-//
-//        //Print them 1 by 1
-//
-//        for (WebElement option : dropdownOptions) {
-//            System.out.println(option.getText());
-//        }
-//
-//        //click yahoo
-//
-//        dropdownOptions.get(2).click();
-
+        extentLogger.pass("Test Passed");
 
     }
-
 }
+
+
