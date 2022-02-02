@@ -1,5 +1,4 @@
-package com.vyTrackHw.utilities;
-
+package com.cybertek.utilities;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
@@ -16,8 +15,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
 public class BrowserUtils {
+
     /*
      * takes screenshot
      * @param name
@@ -39,10 +38,9 @@ public class BrowserUtils {
 
     /**
      * Switches to new window by the exact title. Returns to original window if target title not found
-     *
      * @param targetTitle
      */
-    public static void switchToWindow(String targetTitle, WebDriver driver) {
+    public static void switchToWindow(String targetTitle,WebDriver driver) {
         String origin = Driver.get().getWindowHandle();
         for (String handle : Driver.get().getWindowHandles()) {
             Driver.get().switchTo().window(handle);
@@ -275,6 +273,7 @@ public class BrowserUtils {
     }
 
 
+
     /**
      * Performs double click action on an element
      *
@@ -297,7 +296,6 @@ public class BrowserUtils {
 
     /**
      * Highlighs an element by changing its background and border color
-     *
      * @param element
      */
     public static void highlight(WebElement element) {
@@ -393,9 +391,8 @@ public class BrowserUtils {
     }
 
     /**
-     * checks that an element is present on the DOM of a page. This does not
-     * * necessarily mean that the element is visible.
-     *
+     *  checks that an element is present on the DOM of a page. This does not
+     *    * necessarily mean that the element is visible.
      * @param by
      * @param time
      */

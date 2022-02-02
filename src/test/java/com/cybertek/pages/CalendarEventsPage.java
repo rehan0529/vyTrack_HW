@@ -1,5 +1,6 @@
 package com.cybertek.pages;
-import com.vyTrackHw.utilities.Driver;
+
+import com.cybertek.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -31,7 +32,7 @@ public class CalendarEventsPage extends BasePage {
     public WebElement viewPerPage100;
 
     @FindBy(css = "table>tbody>tr")
-    public List<WebElement> tableRows1;
+    public List<WebElement> tableRows;
 
     @FindBy(xpath = "// label[contains(text(), 'records')]")
     public WebElement totalOfREcords;
@@ -41,5 +42,17 @@ public class CalendarEventsPage extends BasePage {
 
     @FindBy(css = "button.btn.btn-default.btn-small.dropdown-toggle>input[type='checkbox']")
     public WebElement checkbox;
+
+    @FindBy(css = "td[data-column-label='Title']")
+    List<WebElement> meetingTitle;
+
+    public void getMeetingInfo(String title){
+        waitUntilLoaderScreenDisappear();
+        for (int i = 0; i < meetingTitle.size(); i++) {
+            if(meetingTitle.get(i).getText().equals(title));
+                meetingTitle.get(i).click();
+                break;
+        }
+    }
 
 }
