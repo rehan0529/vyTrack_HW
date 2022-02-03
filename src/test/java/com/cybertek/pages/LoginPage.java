@@ -7,10 +7,6 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-/**
- * @author ybilgin
- * @project Vytrack_Projects
- */
 
 
 public class LoginPage {

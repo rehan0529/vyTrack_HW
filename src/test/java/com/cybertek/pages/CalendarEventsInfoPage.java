@@ -9,11 +9,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author ybilgin
- * @project Vytrack_Projects
- */
-
 public class CalendarEventsInfoPage extends BasePage {
 
     @FindBy(xpath = "//div[@class='control-group attribute-row']/label")

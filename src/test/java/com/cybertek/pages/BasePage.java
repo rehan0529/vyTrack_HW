@@ -11,11 +11,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
- * @author ybilgin
- * @project Vytrack_Projects
- */
-
 public abstract class BasePage {
 
     @FindBy(css = "div[class='loader-mask shown']")

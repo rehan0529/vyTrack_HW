@@ -1,9 +1,5 @@
 package com.cybertek.pages;
 
-/**
- * @author ybilgin
- * @project Vytrack_Projects
- */
 
 
 public class DashboardPage extends BasePage{

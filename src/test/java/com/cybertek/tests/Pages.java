@@ -1,10 +1,7 @@
 package com.cybertek.tests;
 
 import com.cybertek.pages.*;
-/**
- * @author ybilgin
- * @project Vytrack_Projects
- */
+
 
 
 public class Pages extends TestBase {

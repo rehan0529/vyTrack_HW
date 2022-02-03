@@ -3,10 +3,7 @@ package com.cybertek.utilities;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-/**
- * @author ybilgin
- * @project Vytrack_Projects
- */
+
 
 /**
  * reads the properties file configuration.properties

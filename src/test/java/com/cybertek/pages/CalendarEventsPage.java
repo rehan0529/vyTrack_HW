@@ -13,10 +13,7 @@ import org.testng.Assert;
 
 import java.util.List;
 
-/**
- * @author ybilgin
- * @project Vytrack_Projects
- */
+
 
 public class CalendarEventsPage extends BasePage {
 
