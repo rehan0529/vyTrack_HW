@@ -15,11 +15,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @author ybilgin
- * @project Vytrack_Projects
- */
-
 
 public class BrowserUtils {
     /*
@@ -94,11 +89,7 @@ public class BrowserUtils {
         return elemTexts;
     }
 
-    /**
-     * Performs a pause
-     *
-     * @param seconds
-     */
+
     public static void waitFor(int seconds) {
         try {
             Thread.sleep(seconds * 1000);

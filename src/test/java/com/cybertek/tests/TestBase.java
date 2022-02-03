@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 
+
 public class TestBase {
     protected WebDriver driver;
     protected Actions actions;
@@ -54,7 +55,7 @@ public class TestBase {
     }
 
     @BeforeMethod
-    public void setUp(@Optional String env) {
+    public void setUp( String env) {
 
         driver = Driver.get();
         driver.manage().window().maximize();
