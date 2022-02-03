@@ -3,7 +3,16 @@ package com.cybertek.utilities;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+/**
+ * @author ybilgin
+ * @project Vytrack_Projects
+ */
+
+/**
+ * reads the properties file configuration.properties
+ */
 public class ConfigurationReader {
+
     private static Properties properties;
 
     static {
@@ -25,6 +34,10 @@ public class ConfigurationReader {
         }
     }
 
-    public static String get(String keyName) {return properties.getProperty(keyName);}
+    public static String get(String keyName) {
+
+        return properties.getProperty(keyName);
+    }
+
 
 }

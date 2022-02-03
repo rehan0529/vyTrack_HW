@@ -1,5 +1,4 @@
-package com.vyTrackHw.utilities;
-
+package com.cybertek.utilities;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
@@ -15,6 +14,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+/**
+ * @author ybilgin
+ * @project Vytrack_Projects
+ */
 
 
 public class BrowserUtils {
@@ -37,12 +41,8 @@ public class BrowserUtils {
         return target;
     }
 
-    /**
-     * Switches to new window by the exact title. Returns to original window if target title not found
-     *
-     * @param targetTitle
-     */
-    public static void switchToWindow(String targetTitle, WebDriver driver) {
+
+    public static void switchToWindow(String targetTitle,WebDriver driver) {
         String origin = Driver.get().getWindowHandle();
         for (String handle : Driver.get().getWindowHandles()) {
             Driver.get().switchTo().window(handle);
@@ -274,7 +274,6 @@ public class BrowserUtils {
         ((JavascriptExecutor) Driver.get()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-
     /**
      * Performs double click action on an element
      *
@@ -297,7 +296,6 @@ public class BrowserUtils {
 
     /**
      * Highlighs an element by changing its background and border color
-     *
      * @param element
      */
     public static void highlight(WebElement element) {
@@ -360,7 +358,6 @@ public class BrowserUtils {
     public static void executeJScommand(String command) {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.get();
         jse.executeScript(command);
-
     }
 
 
@@ -393,9 +390,8 @@ public class BrowserUtils {
     }
 
     /**
-     * checks that an element is present on the DOM of a page. This does not
-     * * necessarily mean that the element is visible.
-     *
+     *  checks that an element is present on the DOM of a page. This does not
+     *    * necessarily mean that the element is visible.
      * @param by
      * @param time
      */
